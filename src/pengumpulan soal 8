@@ -1,0 +1,168 @@
+
+public abstract class KendaraanUdara implements Kendaraan {
+    public abstract void BahanBakar();
+    public abstract void CaraOperasi();
+    public abstract void tampil();
+    
+    @Override
+    public void setTempatJalan(){
+      System.out.println("Berjalan di Langit");
+    }
+}
+////
+
+public class udara extends KendaraanUdara {
+    
+    private String nama, nomor, merek, warna;
+
+    public udara(String nama, String nomor, String merek, String warna) {
+        this.nama = nama;
+        this.nomor = nomor;
+        this.merek = merek;
+        this.warna = warna;
+    }
+    
+    
+   @Override
+    public void BahanBakar() {
+        System.out.println("Kendaraan ini menggunakan bahan bakar aftur");
+    }
+
+    @Override
+    public void CaraOperasi() {
+        System.out.println("cara beroperasi dengan berjalan diatas udara");
+    } 
+    
+    @Override
+    public void tampil() {
+        System.out.println("nama        : "+nama);
+        System.out.println("No prod     : "+nomor);
+        System.out.println("Manufaktur  : "+merek);
+        System.out.println("Warna       : "+warna);
+        BahanBakar();
+        CaraOperasi();
+    }
+}
+/////
+
+public class main {
+    public static void main(String[] args) {
+        darat kend = new darat("mobil","12324","KTM","Abu-abu");
+        laut kend1 = new laut("kapal","2345","Samsung","bening");
+        udara kend2 = new udara("pesawat","4565","Nokia","Kuning");
+        System.out.println("=================");
+        kend.tampil();
+        System.out.println("=================");
+        kend1.tampil();
+        System.out.println("=================");
+        kend2.tampil();
+        System.out.println("=================");
+    }
+}
+///////
+public class laut extends KendaraanLaut {
+    
+private String nama, nomor, merek, warna;
+
+    public laut(String nama, String nomor, String merek, String warna) {
+        this.nama = nama;
+        this.nomor = nomor;
+        this.merek = merek;
+        this.warna = warna;
+    }
+
+
+
+    @Override
+    public void BahanBakar() {
+        System.out.println("Kendaraan ini menggunakan bahan bakar uranium");
+    }
+
+    @Override
+    public void CaraOperasi() {
+        System.out.println("cara beroperasi dengan berjalan diatas air");
+    }
+
+    @Override
+    public void tampil() {
+        System.out.println("nama        : "+nama);
+        System.out.println("No prod     : "+nomor);
+        System.out.println("Manufaktur  : "+merek);
+        System.out.println("Warna       : "+warna);
+        BahanBakar();
+        CaraOperasi();
+    }
+    
+}
+/////
+
+public abstract class KendaraanUdara implements Kendaraan {
+    public abstract void BahanBakar();
+    public abstract void CaraOperasi();
+    public abstract void tampil();
+    
+    @Override
+    public void setTempatJalan(){
+      System.out.println("Berjalan di Langit");
+    }
+}
+/////
+
+public abstract class KendaraanLaut implements Kendaraan {
+    public abstract void BahanBakar();
+    public abstract void CaraOperasi();
+    public abstract void tampil();
+    @Override
+    public void setTempatJalan(){
+      System.out.println("Berjalan di Laut");
+    }
+}
+//////
+
+public abstract class KendaraanDarat implements Kendaraan  {
+    public abstract void BahanBakar();
+    public abstract void CaraOperasi();
+    public abstract void tampil();
+    @Override
+    public void setTempatJalan(){
+      System.out.println("Berjalan di darat");
+    }
+}
+//////////
+
+public interface Kendaraan {
+    public void setTempatJalan();
+}
+///////
+
+public class darat extends KendaraanDarat {
+    private String nama, nomor, merek, warna;
+
+    public darat(String nama, String nomor, String merek, String warna) {
+        this.nama = nama;
+        this.nomor = nomor;
+        this.merek = merek;
+        this.warna = warna;
+    }
+    
+    
+    @Override
+    public void BahanBakar() {
+        System.out.println("Kendaraan ini menggunakan bahan bakar bensin");
+    }
+
+    @Override
+    public void CaraOperasi() {
+        System.out.println("cara beroperasi dengan berjalan diatas aspal");
+    }
+    
+    @Override
+    public void tampil() {
+        System.out.println("nama        : "+nama);
+        System.out.println("No prod     : "+nomor);
+        System.out.println("Manufaktur  : "+merek);
+        System.out.println("Warna       : "+warna);
+        BahanBakar();
+        CaraOperasi();
+    }
+}
