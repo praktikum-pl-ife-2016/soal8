@@ -1,0 +1,153 @@
+public class Main {
+    public static void main (String[]args){
+        Darat darat = new Darat("SportCar","22226B","Ferrari","Red");
+        
+        System.out.println("Nama : "+darat.getNama());
+        System.out.println("No prod : "+darat.getNoProduksi());
+        System.out.println("Manufaktur : "+darat.getManu());
+        System.out.println("warna : "+darat.getWarna());
+        System.out.print("Beroperasi dengan cara "+darat.Operasi());
+        System.out.print("Bahan bakar yang digunakan adalah "+darat.BBM());
+        
+    }
+}
+
+
+///
+public abstract class KendaraanUdara implements Kendaraan{
+    private String nama;
+    private String noProduksi;
+    private String manufaktur;
+    private String warna;
+    
+    KendaraanUdara(String nama, String noProduksi, String manufaktur,String warna){
+        this.nama = nama;
+        this.noProduksi = noProduksi;
+        this.manufaktur = manufaktur;
+        this.warna = warna;
+    }
+    public String getNama(){
+        return nama;
+    }
+    public String getNoProduksi(){
+        return noProduksi;
+    }
+    public String getManu(){
+        return manufaktur;
+    }
+    public String getWarna(){
+        return warna;
+    }
+    public abstract void BBM();
+    public void Operasi(){
+        System.out.println("menggunakan mesin dan melayang di angkasa");
+        
+    }
+    
+}
+////
+public abstract class KendaraanLaut implements Kendaraan{
+    private String nama;
+    private String noProduksi;
+    private String manufaktur;
+    private String warna;
+    
+    KendaraanLaut(String nama, String noProduksi, String manufaktur,String warna){
+        this.nama = nama;
+        this.noProduksi = noProduksi;
+        this.manufaktur = manufaktur;
+        this.warna = warna;
+    }
+    public String getNama(){
+        return nama;
+    }
+    public String getNoProduksi(){
+        return noProduksi;
+    }
+    public String getManu(){
+        return manufaktur;
+    }
+    public String getWarna(){
+        return warna;
+    }
+    public abstract void BBM();
+    public void Operasi(){
+        System.out.println("menggunakan mesin, bisa menyelam atau mengambang diatas laut");
+        
+    }
+}
+///////////
+public abstract class  KendaraanDarat implements Kendaraan {
+    private String nama;
+    private String noProduksi;
+    private String manufaktur;
+    private String warna;
+    
+    KendaraanDarat(String nama, String noProduksi, String manufaktur,String warna){
+        this.nama = nama;
+        this.noProduksi = noProduksi;
+        this.manufaktur = manufaktur;
+        this.warna = warna;
+    }
+    public String getNama(){
+        return nama;
+    }
+    public String getNoProduksi(){
+        return noProduksi;
+    }
+    public String getManu(){
+        return manufaktur;
+    }
+    public String getWarna(){
+        return warna;
+    }
+    public abstract void BBM();
+    public void Operasi(){
+        System.out.println("menggunakan mesin dan berjalan di jalan");
+        
+    }
+            
+}
+/////
+public interface Kendaraan {
+    public void BBM();
+    public void Operasi();
+}
+///////
+public class Udara extends KendaraanUdara{
+
+    public Udara(String nama, String noProduksi, String manufaktur, String warna) {
+        super(nama, noProduksi, manufaktur, warna);
+    }
+
+    @Override
+    public void BBM() {
+        System.out.println("Aftur");
+    }
+    
+}
+/////////////
+public class Laut extends KendaraanLaut{
+
+    public Laut(String nama, String noProduksi, String manufaktur, String warna) {
+        super(nama, noProduksi, manufaktur, warna);
+    }
+
+    @Override
+    public void BBM() {
+        System.out.println("Solar");
+    }
+}
+///////////
+public class Darat extends KendaraanDarat {
+
+    public Darat(String nama, String noProduksi, String manufaktur, String warna) {
+        super(nama, noProduksi, manufaktur, warna);
+    }
+    
+    @Override
+    public void BBM() {
+        System.out.println("Pertamax");
+    }
+    
+}
